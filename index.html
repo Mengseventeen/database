@@ -66,12 +66,13 @@
             const email = document.getElementById('email').value;
 
             try {
-                const response = await fetch(`${API_URL}/users`, {
+                const response = await fetch('http://192.168.76.1:3000/api/users', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
+                        'Access-Control-Allow-Origin': '*'
                     },
-                    body: JSON.stringify({ name, email }),
+                    body: JSON.stringify({ name, email })
                 });
                 
                 if (response.ok) {
